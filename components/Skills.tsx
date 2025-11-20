@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Server, Database, Code2, Smartphone } from "lucide-react";
+import { Server, Database, Code2, Smartphone, Cpu } from "lucide-react";
 
 /**
  * The Skills component showcases the developer's technical skills categorized by domain.
@@ -102,6 +102,26 @@ export default function Skills() {
                         </h3>
                         <div className="flex flex-wrap gap-2">
                             {['React Native', 'Expo Router', 'React Navigation', 'Redux Toolkit'].map(tech => (
+                                <span key={tech} className="px-3 py-1 bg-secondary text-secondary-foreground text-sm rounded-md font-medium">
+                                    {tech}
+                                </span>
+                            ))}
+                        </div>
+                    </motion.div>
+
+                    {/* 5. AI & PRODUCTIVITY (El toque moderno) */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+                        className="bg-white p-8 rounded-xl shadow-sm border border-border md:col-span-2"
+                    >
+                        <h3 className="font-bold text-xl mb-6 flex items-center gap-3 text-foreground">
+                            <Cpu className="text-pink-600" /> AI & Workflow
+                        </h3>
+                        <div className="flex flex-wrap gap-2">
+                            {['Windsurf IDE', 'Claude Code', 'Gemini 3 Advanced', 'jules', 'Antigravity'].map(tech => (
                                 <span key={tech} className="px-3 py-1 bg-secondary text-secondary-foreground text-sm rounded-md font-medium">
                                     {tech}
                                 </span>
