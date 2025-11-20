@@ -23,6 +23,17 @@ const projects = [
     },
 ];
 
+/**
+ * The Projects component displays a selection of personal or side projects.
+ *
+ * Each project is presented as a card containing:
+ * - A placeholder for a project screenshot.
+ * - The project title and description.
+ * - Tags for the technologies used.
+ * - Links to the source code (GitHub) and live demo.
+ *
+ * @returns A React functional component for the projects section.
+ */
 export default function Projects() {
     return (
         <section id="projects" className="py-20 bg-white">

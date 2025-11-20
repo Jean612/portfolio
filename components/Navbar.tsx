@@ -14,6 +14,16 @@ const navItems = [
     { name: "Contact", href: "#contact" },
 ];
 
+/**
+ * The Navbar component displays the navigation bar at the top of the page.
+ *
+ * It features:
+ * - A responsive design that switches to a mobile menu on smaller screens.
+ * - A transparent background that becomes solid and blurred upon scrolling.
+ * - Smooth animations for the mobile menu toggling using Framer Motion.
+ *
+ * @returns A React functional component representing the navigation bar.
+ */
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);

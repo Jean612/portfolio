@@ -3,6 +3,15 @@
 import { motion } from "framer-motion";
 import { Server, Database, Code2, Smartphone } from "lucide-react";
 
+/**
+ * The Skills component showcases the developer's technical skills categorized by domain.
+ *
+ * Categories include Backend, Frontend, Mobile, and Tools.
+ * Each category is displayed in a card with a list of specific technologies.
+ * The cards animate into view when the user scrolls to the section.
+ *
+ * @returns A React functional component for the skills section.
+ */
 export default function Skills() {
     return (
         <section id="skills" className="py-20 bg-secondary/30">
