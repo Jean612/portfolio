@@ -3,6 +3,17 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Github, Linkedin } from "lucide-react";
 
+/**
+ * The Hero component renders the main introductory section of the portfolio.
+ *
+ * It includes:
+ * - Animated background elements.
+ * - A brief introduction and professional title.
+ * - Links to social profiles (GitHub, LinkedIn) and a call-to-action button.
+ * - Entrance animations using Framer Motion.
+ *
+ * @returns A React functional component for the hero section.
+ */
 export default function Hero() {
     return (
         <section id="home" className="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden">
@@ -22,7 +33,7 @@ export default function Hero() {
                         Backend-Heavy Full Stack
                     </span>
                     <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight text-foreground">
-                        Hi, I'm <span className="text-primary">Jean Chavez</span>
+                        Hi, I&apos;m <span className="text-primary">Jean Chavez</span>
                     </h1>
                     <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-10">
                         Building modern web experiences with Ruby on Rails, React, and Next.js.

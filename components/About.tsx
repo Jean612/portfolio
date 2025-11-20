@@ -2,6 +2,14 @@
 
 import { motion } from "framer-motion";
 
+/**
+ * The About component renders the "About Me" section.
+ *
+ * It provides a summary of the developer's background, key skills, and professional focus.
+ * The content is animated to fade in when scrolled into view.
+ *
+ * @returns A React functional component for the about section.
+ */
 export default function About() {
     return (
         <section id="about" className="py-20 bg-white">
@@ -20,7 +28,7 @@ export default function About() {
                     </p>
                     <p className="text-lg text-muted-foreground leading-relaxed">
                         Specialized in solving <strong className="text-primary">N+1 queries</strong>, designing scalable <strong className="text-primary">GraphQL schemas</strong>, and building <strong className="text-primary">serverless architectures</strong>.
-                        Recently, I've expanded my skillset to mobile development with <strong className="text-primary">React Native</strong>, allowing me to deliver cross-platform solutions.
+                        Recently, I&apos;ve expanded my skillset to mobile development with <strong className="text-primary">React Native</strong>, allowing me to deliver cross-platform solutions.
                     </p>
                 </motion.div>
             </div>

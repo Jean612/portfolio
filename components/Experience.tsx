@@ -27,6 +27,17 @@ const experiences = [
     },
 ];
 
+/**
+ * The Experience component displays a timeline or list of professional work experience.
+ *
+ * It maps through a list of experience objects and renders them with:
+ * - Company name, role, and duration.
+ * - A description of responsibilities and achievements.
+ * - Tags for technologies used in each role.
+ * - Scroll-triggered animations for each entry.
+ *
+ * @returns A React functional component for the experience section.
+ */
 export default function Experience() {
     return (
         <section id="experience" className="py-20 bg-secondary/30">
