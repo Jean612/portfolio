@@ -19,8 +19,8 @@ export default function About() {
                         My journey involves building robust applications using <strong className="text-primary">Ruby on Rails</strong> and crafting dynamic user interfaces with <strong className="text-primary">React</strong> and <strong className="text-primary">Next.js</strong>.
                     </p>
                     <p className="text-lg text-muted-foreground leading-relaxed">
+                        Specialized in solving <strong className="text-primary">N+1 queries</strong>, designing scalable <strong className="text-primary">GraphQL schemas</strong>, and building <strong className="text-primary">serverless architectures</strong>.
                         Recently, I've expanded my skillset to mobile development with <strong className="text-primary">React Native</strong>, allowing me to deliver cross-platform solutions.
-                        I value clean code, minimalist design, and creating intuitive user experiences.
                     </p>
                 </motion.div>
             </div>

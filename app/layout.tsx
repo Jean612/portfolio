@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Jean Chavez | Full Stack Developer",
+  title: "Jean Chavez | Backend-Heavy Full Stack Developer",
   description: "Portfolio of Jean Chavez, a Full Stack Developer specializing in Ruby on Rails, React, and Next.js.",
 };
 

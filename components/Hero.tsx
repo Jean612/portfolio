@@ -45,7 +45,9 @@ export default function Hero() {
                                 <Github size={20} />
                             </a>
                             <a
-                                href="#" // Placeholder for LinkedIn
+                                href="https://www.linkedin.com/in/jeanchavezd"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="p-3 rounded-full bg-muted text-foreground hover:bg-secondary hover:text-secondary-foreground transition-colors"
                             >
                                 <Linkedin size={20} />
