@@ -5,23 +5,16 @@ import { Github, ExternalLink } from "lucide-react";
 
 const projects = [
     {
-        title: "Project One",
-        description: "A full-stack application built with Ruby on Rails and React. Features user authentication and real-time updates.",
-        tags: ["Rails", "React", "PostgreSQL"],
-        github: "https://github.com/Jean612",
-        demo: "#",
-    },
-    {
-        title: "Project Two",
-        description: "Mobile application for community management using React Native and Expo.",
+        title: "React Native Community App",
+        description: "A complete mobile application for community management built with React Native and Expo. Features real-time chat, event scheduling, and push notifications.",
         tags: ["React Native", "Expo", "Firebase"],
         github: "https://github.com/Jean612",
         demo: "#",
     },
     {
-        title: "Project Three",
-        description: "E-commerce platform with Next.js and Stripe integration.",
-        tags: ["Next.js", "TypeScript", "Stripe"],
+        title: "Backend Architecture & APIs",
+        description: "Collection of robust backend services and APIs demonstrating scalable architecture patterns, GraphQL implementations, and serverless functions.",
+        tags: ["Ruby on Rails", "GraphQL", "Serverless"],
         github: "https://github.com/Jean612",
         demo: "#",
     },
@@ -38,8 +31,8 @@ export default function Projects() {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Featured Projects</h2>
-                    <p className="text-muted-foreground">A selection of my recent work.</p>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Side Projects</h2>
+                    <p className="text-muted-foreground">Personal projects and experiments.</p>
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

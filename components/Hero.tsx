@@ -19,7 +19,7 @@ export default function Hero() {
                     transition={{ duration: 0.8 }}
                 >
                     <span className="inline-block py-1 px-3 rounded-full bg-secondary text-secondary-foreground text-sm font-medium mb-6">
-                        Full Stack Developer
+                        Backend-Heavy Full Stack
                     </span>
                     <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight text-foreground">
                         Hi, I'm <span className="text-primary">Jean Chavez</span>
