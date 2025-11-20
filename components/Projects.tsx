@@ -2,14 +2,16 @@
 
 import { motion } from "framer-motion";
 import { Github, ExternalLink } from "lucide-react";
+import Image from "next/image";
 
 const projects = [
     {
-        title: "React Native Community App",
-        description: "A complete mobile application for community management built with React Native and Expo. Features real-time chat, event scheduling, and push notifications.",
-        tags: ["React Native", "Expo", "Firebase"],
-        github: "https://github.com/Jean612",
-        demo: "#",
+        title: "Modern Pokédex App",
+        description: "Mobile application developed with React Native and Expo Router. Implements infinite scrolling for performance, real-time search, dark mode, and strict TypeScript for secure typing.",
+        tags: ['React Native', 'Expo', 'TypeScript', 'PokeAPI', 'Infinite Scroll'],
+        github: "https://github.com/Jean612/pokemon-app",
+        demo: "https://github.com/Jean612/pokemon-app",
+        image: "/pokedex-preview.png",
     },
     {
         title: "Backend Architecture & APIs",
@@ -17,6 +19,7 @@ const projects = [
         tags: ["Ruby on Rails", "GraphQL", "Serverless"],
         github: "https://github.com/Jean612",
         demo: "#",
+        image: null,
     },
 ];
 
@@ -43,14 +46,25 @@ export default function Projects() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="bg-white border border-border rounded-xl overflow-hidden hover:shadow-lg transition-shadow"
+                            className="bg-white border border-border rounded-xl overflow-hidden hover:shadow-lg transition-shadow flex flex-col"
                         >
-                            <div className="h-48 bg-secondary/50 flex items-center justify-center">
-                                <span className="text-secondary-foreground/50 font-medium">Project Screenshot</span>
+                            <div className="h-48 bg-secondary/50 relative overflow-hidden">
+                                {project.image ? (
+                                    <Image
+                                        src={project.image}
+                                        alt={project.title}
+                                        fill
+                                        className="object-cover object-top"
+                                    />
+                                ) : (
+                                    <div className="w-full h-full flex items-center justify-center">
+                                        <span className="text-secondary-foreground/50 font-medium">Project Screenshot</span>
+                                    </div>
+                                )}
                             </div>
-                            <div className="p-6">
+                            <div className="p-6 flex flex-col flex-grow">
                                 <h3 className="text-xl font-bold mb-2 text-foreground">{project.title}</h3>
-                                <p className="text-muted-foreground mb-4 line-clamp-3">{project.description}</p>
+                                <p className="text-muted-foreground mb-4 line-clamp-3 flex-grow">{project.description}</p>
                                 <div className="flex flex-wrap gap-2 mb-6">
                                     {project.tags.map((tag) => (
                                         <span key={tag} className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded-md">
@@ -58,7 +72,7 @@ export default function Projects() {
                                         </span>
                                     ))}
                                 </div>
-                                <div className="flex items-center gap-4">
+                                <div className="flex items-center gap-4 mt-auto">
                                     <a
                                         href={project.github}
                                         target="_blank"
@@ -69,6 +83,8 @@ export default function Projects() {
                                     </a>
                                     <a
                                         href={project.demo}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         className="flex items-center gap-1 text-sm font-medium text-foreground hover:text-primary transition-colors"
                                     >
                                         <ExternalLink size={16} /> Demo
