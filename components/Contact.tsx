@@ -19,7 +19,7 @@ export default function Contact() {
                         I'm currently open to new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
                     </p>
                     <a
-                        href="mailto:hello@example.com"
+                        href="mailto:diegojeanpier.dc@gmail.com"
                         className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl"
                     >
                         <Mail size={20} /> Say Hello
