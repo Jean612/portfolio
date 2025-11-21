@@ -12,7 +12,7 @@ const projects = [
         tags: ['React Native', 'Expo', 'TypeScript', 'PokeAPI', 'Infinite Scroll'],
         github: "https://github.com/Jean612/pokemon-app",
         demo: "https://github.com/Jean612/pokemon-app",
-        image: "null",
+        image: null,
     },
     {
         title: "High-Performance URL Shortener",
