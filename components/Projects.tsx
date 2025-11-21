@@ -14,11 +14,11 @@ const projects = [
         image: "/pokedex-preview.png",
     },
     {
-        title: "Backend Architecture & APIs",
-        description: "Collection of robust backend services and APIs demonstrating scalable architecture patterns, GraphQL implementations, and serverless functions.",
-        tags: ["Ruby on Rails", "GraphQL", "Serverless"],
-        github: "https://github.com/Jean612",
-        demo: "#",
+        title: "High-Performance URL Shortener",
+        description: "Optimized GraphQL API for URL shortening. Designed for scalability with Base62 encoding algorithm and deployed on Render.",
+        tags: ['Ruby on Rails', 'GraphQL', 'PostgreSQL', 'Base62 Algorithm'],
+        github: "https://github.com/Jean612/url_shortener",
+        demo: "https://url-shortener-u7yc.onrender.com",
         image: null,
     },
 ];
