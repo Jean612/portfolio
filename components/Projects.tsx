@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Github, ExternalLink } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const projects = [
     {
@@ -34,6 +34,17 @@ const projects = [
 
 const ProjectCard = ({ project, index }: { project: typeof projects[0], index: number }) => {
     const [isExpanded, setIsExpanded] = useState(false);
+    const [showReadMore, setShowReadMore] = useState(false);
+    const descriptionRef = useRef<HTMLParagraphElement>(null);
+
+    useEffect(() => {
+        if (descriptionRef.current) {
+            const { scrollHeight, clientHeight } = descriptionRef.current;
+            if (scrollHeight > clientHeight) {
+                setShowReadMore(true);
+            }
+        }
+    }, []);
 
     return (
         <motion.div
@@ -59,15 +70,20 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0], index: n
             </div>
             <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-xl font-bold mb-2 text-foreground">{project.title}</h3>
-                <p className={`text-muted-foreground mb-4 flex-grow ${isExpanded ? '' : 'line-clamp-3'}`}>
+                <p
+                    ref={descriptionRef}
+                    className={`text-muted-foreground mb-4 ${isExpanded ? '' : 'line-clamp-3'}`}
+                >
                     {project.description}
                 </p>
-                <button
-                    onClick={() => setIsExpanded(!isExpanded)}
-                    className="text-primary text-sm font-medium mb-4 self-start hover:underline focus:outline-none"
-                >
-                    {isExpanded ? "Show less" : "Read more"}
-                </button>
+                {showReadMore && (
+                    <button
+                        onClick={() => setIsExpanded(!isExpanded)}
+                        className="text-primary text-sm font-medium mb-4 self-start hover:underline focus:outline-none"
+                    >
+                        {isExpanded ? "Show less" : "Read more"}
+                    </button>
+                )}
                 <div className="flex flex-wrap gap-2 mb-6">
                     {project.tags.map((tag) => (
                         <span key={tag} className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded-md">
