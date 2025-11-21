@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Github, ExternalLink } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
 
 const projects = [
     {
@@ -21,7 +22,81 @@ const projects = [
         demo: "https://url-shortener-u7yc.onrender.com",
         image: null,
     },
+    {
+        title: "Backend Architecture & APIs",
+        description: "Collection of robust backend services and APIs demonstrating scalable architecture patterns, GraphQL implementations, and serverless functions.",
+        tags: ["Ruby on Rails", "GraphQL", "Serverless"],
+        github: "https://github.com/Jean612",
+        demo: "#",
+        image: null,
+    },
 ];
+
+const ProjectCard = ({ project, index }: { project: typeof projects[0], index: number }) => {
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            className="bg-white border border-border rounded-xl overflow-hidden hover:shadow-lg transition-shadow flex flex-col"
+        >
+            <div className="h-48 bg-secondary/50 relative overflow-hidden">
+                {project.image ? (
+                    <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover object-top"
+                    />
+                ) : (
+                    <div className="w-full h-full flex items-center justify-center">
+                        <span className="text-secondary-foreground/50 font-medium">Project Screenshot</span>
+                    </div>
+                )}
+            </div>
+            <div className="p-6 flex flex-col flex-grow">
+                <h3 className="text-xl font-bold mb-2 text-foreground">{project.title}</h3>
+                <p className={`text-muted-foreground mb-4 flex-grow ${isExpanded ? '' : 'line-clamp-3'}`}>
+                    {project.description}
+                </p>
+                <button
+                    onClick={() => setIsExpanded(!isExpanded)}
+                    className="text-primary text-sm font-medium mb-4 self-start hover:underline focus:outline-none"
+                >
+                    {isExpanded ? "Show less" : "Read more"}
+                </button>
+                <div className="flex flex-wrap gap-2 mb-6">
+                    {project.tags.map((tag) => (
+                        <span key={tag} className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded-md">
+                            {tag}
+                        </span>
+                    ))}
+                </div>
+                <div className="flex items-center gap-4 mt-auto">
+                    <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1 text-sm font-medium text-foreground hover:text-primary transition-colors"
+                    >
+                        <Github size={16} /> Code
+                    </a>
+                    <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1 text-sm font-medium text-foreground hover:text-primary transition-colors"
+                    >
+                        <ExternalLink size={16} /> Demo
+                    </a>
+                </div>
+            </div>
+        </motion.div>
+    );
+};
 
 /**
  * The Projects component displays a selection of personal or side projects.
@@ -51,58 +126,7 @@ export default function Projects() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map((project, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="bg-white border border-border rounded-xl overflow-hidden hover:shadow-lg transition-shadow flex flex-col"
-                        >
-                            <div className="h-48 bg-secondary/50 relative overflow-hidden">
-                                {project.image ? (
-                                    <Image
-                                        src={project.image}
-                                        alt={project.title}
-                                        fill
-                                        className="object-cover object-top"
-                                    />
-                                ) : (
-                                    <div className="w-full h-full flex items-center justify-center">
-                                        <span className="text-secondary-foreground/50 font-medium">Project Screenshot</span>
-                                    </div>
-                                )}
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <h3 className="text-xl font-bold mb-2 text-foreground">{project.title}</h3>
-                                <p className="text-muted-foreground mb-4 line-clamp-3 flex-grow">{project.description}</p>
-                                <div className="flex flex-wrap gap-2 mb-6">
-                                    {project.tags.map((tag) => (
-                                        <span key={tag} className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded-md">
-                                            {tag}
-                                        </span>
-                                    ))}
-                                </div>
-                                <div className="flex items-center gap-4 mt-auto">
-                                    <a
-                                        href={project.github}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex items-center gap-1 text-sm font-medium text-foreground hover:text-primary transition-colors"
-                                    >
-                                        <Github size={16} /> Code
-                                    </a>
-                                    <a
-                                        href={project.demo}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex items-center gap-1 text-sm font-medium text-foreground hover:text-primary transition-colors"
-                                    >
-                                        <ExternalLink size={16} /> Demo
-                                    </a>
-                                </div>
-                            </div>
-                        </motion.div>
+                        <ProjectCard key={index} project={project} index={index} />
                     ))}
                 </div>
             </div>
