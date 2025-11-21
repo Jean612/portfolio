@@ -12,7 +12,7 @@ const projects = [
         tags: ['React Native', 'Expo', 'TypeScript', 'PokeAPI', 'Infinite Scroll'],
         github: "https://github.com/Jean612/pokemon-app",
         demo: "https://github.com/Jean612/pokemon-app",
-        image: "/pokedex-preview.png",
+        image: "null",
     },
     {
         title: "High-Performance URL Shortener",
@@ -20,14 +20,6 @@ const projects = [
         tags: ['Ruby on Rails', 'GraphQL', 'PostgreSQL', 'Base62 Algorithm'],
         github: "https://github.com/Jean612/url_shortener",
         demo: "https://url-shortener-u7yc.onrender.com",
-        image: null,
-    },
-    {
-        title: "Backend Architecture & APIs",
-        description: "Collection of robust backend services and APIs demonstrating scalable architecture patterns, GraphQL implementations, and serverless functions.",
-        tags: ["Ruby on Rails", "GraphQL", "Serverless"],
-        github: "https://github.com/Jean612",
-        demo: "#",
         image: null,
     },
 ];
