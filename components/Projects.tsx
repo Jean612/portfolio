@@ -16,10 +16,10 @@ const projects = [
     },
     {
         title: "High-Performance URL Shortener",
-        description: "Optimized GraphQL API for URL shortening. Designed for scalability with Base62 encoding algorithm and deployed on Render.",
-        tags: ['Ruby on Rails', 'GraphQL', 'PostgreSQL', 'Base62 Algorithm'],
+        description: "Optimized GraphQL API for URL shortening. Designed for scalability with Base62 encoding, containerized with Docker and deployed on Oracle Cloud VPS using Nginx.",
+        tags: ['Ruby on Rails', 'GraphQL', 'PostgreSQL', 'Base62 Algorithm', 'Docker', 'Nginx', 'Oracle Cloud', 'CI/CD', 'GitHub Actions'],
         github: "https://github.com/Jean612/url_shortener",
-        demo: "https://url-shortener-u7yc.onrender.com",
+        demo: "https://api-shortener.jeanchavez.dev/up",
         image: null,
     },
 ];
