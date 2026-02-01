@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Github, Linkedin } from "lucide-react";
+import { ArrowRight, Github, Linkedin, FileText } from "lucide-react";
 
 /**
  * The Hero component renders the main introductory section of the portfolio.
@@ -53,6 +53,18 @@ export default function Hero() {
               View My Work <ArrowRight size={18} />
             </a>
             <div className="flex items-center gap-4 mt-4 md:mt-0">
+              {/* BOTÓN NUEVO: Download CV */}
+              <a
+                href="/resume.pdf" // Asegúrate que el archivo esté en public/resume.pdf
+                download="Jean_Chavez_CV.pdf" // Esto fuerza la descarga con este nombre
+                className="px-6 py-3 rounded-full bg-white border border-border text-foreground font-medium hover:bg-secondary transition-colors flex items-center gap-2"
+              >
+                <FileText size={18} /> CV
+              </a>
+
+              {/* Separador visual (opcional) */}
+              <div className="w-px h-8 bg-border mx-2 hidden md:block"></div>
+
               <a
                 href="https://github.com/Jean612"
                 target="_blank"
