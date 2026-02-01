@@ -162,9 +162,9 @@ export default function Skills() {
               {[
                 "Windsurf IDE",
                 "Claude Code",
-                "Gemini 2.0 Flash",
-                "Cursor",
-                "Vim",
+                "Gemini 3 Advanced",
+                "jules",
+                "Antigravity",
               ].map((tech) => (
                 <span
                   key={tech}
