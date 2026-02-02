@@ -7,16 +7,24 @@ import { useState, useRef, useEffect } from "react";
 
 const projects = [
   {
-    title: "Modern Pokédex App",
+    title: "URL Shortener SaaS Platform",
     description:
-      "Mobile application developed with React Native and Expo Router. Implements infinite scrolling for performance, real-time search, dark mode, and strict TypeScript for secure typing.",
-    tags: ["React Native", "Expo", "TypeScript", "PokeAPI", "Infinite Scroll"],
-    github: "https://github.com/Jean612/pokemon-app",
-    demo: "https://github.com/Jean612/pokemon-app",
-    image: "/pokedex-preview.jpg",
+      "Modern frontend interface for the URL shortening service. Built with Next.js 14 and Shadcn UI, offering a seamless user experience for creating links and viewing real-time click analytics via GraphQL.",
+    tags: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "TypeScript",
+      "GraphQL",
+      "Vercel",
+    ],
+    github: "https://github.com/Jean612/url-shortener-frontend", // Asegúrate de que este sea el link correcto de tu repo
+    demo: "https://shortener.jeanchavez.dev",
+    image: "/shortener-preview.png",
   },
   {
-    title: "High-Performance URL Shortener",
+    title: "High-Performance URL Shortener API",
     description:
       "Optimized GraphQL API for URL shortening. Designed for scalability with Base62 encoding, containerized with Docker and deployed on Oracle Cloud VPS using Nginx.",
     tags: [
@@ -33,6 +41,15 @@ const projects = [
     github: "https://github.com/Jean612/url_shortener",
     demo: "https://api-shortener.jeanchavez.dev/up",
     image: "/architecture-preview.png",
+  },
+  {
+    title: "Modern Pokédex App",
+    description:
+      "Mobile application developed with React Native and Expo Router. Implements infinite scrolling for performance, real-time search, dark mode, and strict TypeScript for secure typing.",
+    tags: ["React Native", "Expo", "TypeScript", "PokeAPI", "Infinite Scroll"],
+    github: "https://github.com/Jean612/pokemon-app",
+    demo: "https://github.com/Jean612/pokemon-app",
+    image: "/pokedex-preview.jpg",
   },
 ];
 
