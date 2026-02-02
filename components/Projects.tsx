@@ -9,7 +9,7 @@ const projects = [
   {
     title: "URL Shortener SaaS Platform",
     description:
-      "Modern frontend interface for the URL shortening service. Built with Next.js 14 and Shadcn UI, offering a seamless user experience for creating links and viewing real-time click analytics via GraphQL.",
+      "Modern frontend interface for the URL shortening service. Built with Next.js 16 and Shadcn UI, offering a seamless user experience for creating links and viewing real-time click analytics via GraphQL.",
     tags: [
       "Next.js",
       "React",
