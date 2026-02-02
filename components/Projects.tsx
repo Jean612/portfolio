@@ -7,9 +7,9 @@ import { useState, useRef, useEffect } from "react";
 
 const projects = [
   {
-    title: "URL Shortener SaaS Platform",
+    title: "Lynk.lat - URL Shortener SaaS",
     description:
-      "Modern frontend interface for the URL shortening service. Built with Next.js 16 and Shadcn UI, offering a seamless user experience for creating links and viewing real-time click analytics via GraphQL.",
+      "Professional URL shortening platform featuring a modern dashboard, real-time analytics, and high-performance redirection. Built with a scalable microservices architecture.",
     tags: [
       "Next.js",
       "React",
@@ -19,8 +19,8 @@ const projects = [
       "GraphQL",
       "Vercel",
     ],
-    github: "https://github.com/Jean612/url-shortener-frontend", // Asegúrate de que este sea el link correcto de tu repo
-    demo: "https://shortener.jeanchavez.dev",
+    github: "https://github.com/Jean612/url-shortener-frontend",
+    demo: "https://app.lynk.lat",
     image: "/shortener-preview.png",
   },
   {
