@@ -4,6 +4,67 @@ import { motion } from "framer-motion";
 import { Server, Cloud, Code2, Smartphone, Cpu } from "lucide-react";
 
 /**
+ * The SKILL_CATEGORIES constant contains the data for each technical domain category.
+ */
+const SKILL_CATEGORIES = [
+  {
+    title: "Backend Core",
+    icon: Server,
+    iconColor: "text-primary",
+    skills: ["Ruby", "Ruby on Rails 7", "GraphQL", "Node.js", "RSpec", "Sidekiq"],
+    x: -20,
+    delay: 0,
+  },
+  {
+    title: "DevOps & Infra",
+    icon: Cloud,
+    iconColor: "text-accent",
+    skills: [
+      "Docker",
+      "Nginx",
+      "GitHub Actions",
+      "Linux/VPS",
+      "PostgreSQL",
+      "Redis",
+      "AWS Lambda",
+    ],
+    x: 20,
+    delay: 0.1,
+  },
+  {
+    title: "Frontend",
+    icon: Code2,
+    iconColor: "text-green-500",
+    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+    x: -20,
+    delay: 0.2,
+  },
+  {
+    title: "Mobile",
+    icon: Smartphone,
+    iconColor: "text-orange-500",
+    skills: ["React Native", "Expo Router", "React Navigation", "Redux Toolkit"],
+    x: 20,
+    delay: 0.3,
+  },
+  {
+    title: "AI & Workflow",
+    icon: Cpu,
+    iconColor: "text-pink-600",
+    skills: [
+      "Windsurf IDE",
+      "Claude Code",
+      "Gemini 3 Advanced",
+      "jules",
+      "Antigravity",
+    ],
+    x: 20,
+    delay: 0.3,
+    className: "md:col-span-2",
+  },
+] as const;
+
+/**
  * The Skills component showcases the developer's technical skills categorized by domain.
  *
  * Categories include Backend, Frontend, Mobile, and Tools.
@@ -32,149 +93,30 @@ export default function Skills() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {/* 1. BACKEND (Tu Fuerte) */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="bg-white p-8 rounded-xl shadow-sm border border-border"
-          >
-            <h3 className="font-bold text-xl mb-6 flex items-center gap-3 text-foreground">
-              <Server className="text-primary" /> Backend Core
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {[
-                "Ruby",
-                "Ruby on Rails 7",
-                "GraphQL",
-                "Node.js",
-                "RSpec",
-                "Sidekiq",
-              ].map((tech) => (
-                <span
-                  key={tech}
-                  className="px-3 py-1 bg-secondary text-secondary-foreground text-sm rounded-md font-medium"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* 2. DEVOPS & INFRA (¡Actualizado con tus nuevos poderes!) */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="bg-white p-8 rounded-xl shadow-sm border border-border"
-          >
-            <h3 className="font-bold text-xl mb-6 flex items-center gap-3 text-foreground">
-              <Cloud className="text-accent" /> DevOps & Infra
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {/* Agregamos Nginx, GitHub Actions, Linux y SSL aquí */}
-              {[
-                "Docker",
-                "Nginx",
-                "GitHub Actions",
-                "Linux/VPS",
-                "PostgreSQL",
-                "Redis",
-                "AWS Lambda",
-              ].map((tech) => (
-                <span
-                  key={tech}
-                  className="px-3 py-1 bg-secondary text-secondary-foreground text-sm rounded-md font-medium"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* 3. FRONTEND */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-white p-8 rounded-xl shadow-sm border border-border"
-          >
-            <h3 className="font-bold text-xl mb-6 flex items-center gap-3 text-foreground">
-              <Code2 className="text-green-500" /> Frontend
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {["React", "Next.js", "TypeScript", "Tailwind CSS"].map(
-                (tech) => (
+          {SKILL_CATEGORIES.map((category) => (
+            <motion.div
+              key={category.title}
+              initial={{ opacity: 0, x: category.x }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: category.delay }}
+              className={`bg-white p-8 rounded-xl shadow-sm border border-border ${category.className ?? ""}`.trim()}
+            >
+              <h3 className="font-bold text-xl mb-6 flex items-center gap-3 text-foreground">
+                <category.icon className={category.iconColor} /> {category.title}
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {category.skills.map((tech) => (
                   <span
                     key={tech}
                     className="px-3 py-1 bg-secondary text-secondary-foreground text-sm rounded-md font-medium"
                   >
                     {tech}
                   </span>
-                ),
-              )}
-            </div>
-          </motion.div>
-
-          {/* 4. MOBILE */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="bg-white p-8 rounded-xl shadow-sm border border-border"
-          >
-            <h3 className="font-bold text-xl mb-6 flex items-center gap-3 text-foreground">
-              <Smartphone className="text-orange-500" /> Mobile
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {[
-                "React Native",
-                "Expo Router",
-                "React Navigation",
-                "Redux Toolkit",
-              ].map((tech) => (
-                <span
-                  key={tech}
-                  className="px-3 py-1 bg-secondary text-secondary-foreground text-sm rounded-md font-medium"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* 5. AI & WORKFLOW */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="bg-white p-8 rounded-xl shadow-sm border border-border md:col-span-2"
-          >
-            <h3 className="font-bold text-xl mb-6 flex items-center gap-3 text-foreground">
-              <Cpu className="text-pink-600" /> AI & Workflow
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {[
-                "Windsurf IDE",
-                "Claude Code",
-                "Gemini 3 Advanced",
-                "jules",
-                "Antigravity",
-              ].map((tech) => (
-                <span
-                  key={tech}
-                  className="px-3 py-1 bg-secondary text-secondary-foreground text-sm rounded-md font-medium"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
