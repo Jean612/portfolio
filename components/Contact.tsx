@@ -1,5 +1,6 @@
 "use client";
 
+import { useCallback } from "react";
 import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
 
@@ -12,6 +13,12 @@ import { Mail } from "lucide-react";
  * @returns A React functional component for the contact section.
  */
 export default function Contact() {
+    const handleContact = useCallback(() => {
+        const user = "diegojeanpier.dc";
+        const domain = "gmail.com";
+        window.location.href = `mailto:${user}@${domain}`;
+    }, []);
+
     return (
         <section id="contact" className="py-20 bg-secondary/30">
             <div className="container mx-auto px-6 text-center">
@@ -26,12 +33,12 @@ export default function Contact() {
                     <p className="text-lg text-muted-foreground mb-8">
                         I&apos;m currently open to new opportunities. Whether you have a question or just want to say hi, I&apos;ll try my best to get back to you!
                     </p>
-                    <a
-                        href="mailto:diegojeanpier.dc@gmail.com"
-                        className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl"
+                    <button
+                        onClick={handleContact}
+                        className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl cursor-pointer"
                     >
                         <Mail size={20} /> Say Hello
-                    </a>
+                    </button>
                 </motion.div>
             </div>
         </section>

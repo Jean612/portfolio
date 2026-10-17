@@ -65,12 +65,15 @@ const ProjectCard = ({
   const descriptionRef = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
-    if (descriptionRef.current) {
-      const { scrollHeight, clientHeight } = descriptionRef.current;
-      if (scrollHeight > clientHeight) {
-        setShowReadMore(true);
+    const id = requestAnimationFrame(() => {
+      if (descriptionRef.current) {
+        const { scrollHeight, clientHeight } = descriptionRef.current;
+        if (scrollHeight > clientHeight) {
+          setShowReadMore(true);
+        }
       }
-    }
+    });
+    return () => cancelAnimationFrame(id);
   }, []);
 
   return (
@@ -87,6 +90,7 @@ const ProjectCard = ({
             src={project.image}
             alt={project.title}
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
             className="object-cover object-top"
           />
         ) : (
