@@ -8,7 +8,7 @@ vi.mock('framer-motion', async () => {
   return {
     ...actual,
     motion: {
-      div: ({ children, className }: any) => (
+      div: ({ children, className }: { children?: React.ReactNode; className?: string }) => (
         <div className={className} data-testid="motion-div">
           {children}
         </div>

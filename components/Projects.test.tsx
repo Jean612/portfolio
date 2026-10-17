@@ -8,7 +8,7 @@ vi.mock('framer-motion', async () => {
   return {
     ...actual,
     motion: {
-      div: ({ children, className }: any) => (
+      div: ({ children, className }: { children?: React.ReactNode; className?: string }) => (
         <div className={className} data-testid="motion-div">
           {children}
         </div>
@@ -44,8 +44,8 @@ describe('Projects Component', () => {
   })
 
   describe('Read more functionality', () => {
-    let scrollHeightSpy: any
-    let clientHeightSpy: any
+    let scrollHeightSpy: ReturnType<typeof vi.spyOn>
+    let clientHeightSpy: ReturnType<typeof vi.spyOn>
 
     beforeEach(() => {
       // Mock scrollHeight > clientHeight to trigger "Read more"
@@ -75,7 +75,8 @@ describe('Projects Component', () => {
       expect(screen.getByText('Show less')).toBeInTheDocument()
 
       fireEvent.click(screen.getByText('Show less'))
-      expect(screen.getByText('Read more')).toBeInTheDocument()
+      expect(screen.queryByText('Show less')).toBeNull()
+      expect(screen.getAllByText('Read more').length).toBe(3)
     })
   })
 })
