@@ -1,12 +1,22 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Server, Cloud, Code2, Smartphone, Cpu } from "lucide-react";
+import { Server, Cloud, Code2, Smartphone, Cpu, type LucideIcon } from "lucide-react";
+
+interface SkillCategory {
+  title: string;
+  icon: LucideIcon;
+  iconColor: string;
+  skills: readonly string[];
+  x: number;
+  delay: number;
+  className?: string;
+}
 
 /**
  * The SKILL_CATEGORIES constant contains the data for each technical domain category.
  */
-const SKILL_CATEGORIES = [
+const SKILL_CATEGORIES: readonly SkillCategory[] = [
   {
     title: "Backend Core",
     icon: Server,
@@ -62,7 +72,7 @@ const SKILL_CATEGORIES = [
     delay: 0.3,
     className: "md:col-span-2",
   },
-] as const;
+];
 
 /**
  * The Skills component showcases the developer's technical skills categorized by domain.
